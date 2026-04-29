@@ -11,7 +11,7 @@ public class NextNode
 {
     public bool autoAdvance = false;
 
-    
+
     [Header("Friendship Condition")]
     [Header("Leave blank if not applicable.")]
     public RelationshipCheck relationshipCheck;
@@ -28,5 +28,7 @@ public class NextNode
     [Header("Choose the next dialogue node.")]
     
     public DialogueNode _nextDialogueNode;
+
+    public TimeOfDay timeOfDay;
 
 }

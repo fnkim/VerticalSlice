@@ -15,50 +15,71 @@ MonoBehaviour:
   _lines:
   - hideBox: 0
     _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
     _name: 0
     hideSprite: 0
     fadeIn: 0
     fadeOut: 0
-    _dialogueText: You step into the living room, holding an empty cookie jar in
-      your hands.
-  - hideBox: 0
-    _sprite: {fileID: 21300000, guid: 0b1913bf5ef6ef14283fbb8f5fd59408, type: 3}
-    _name: 0
-    hideSprite: 0
-    fadeIn: 1
-    fadeOut: 0
-    _dialogueText: The boy runs up to you.
+    _dialogueText: I glance around the cluttered alleyway.
   - hideBox: 0
     _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: A flickering light illuminates the cold darkness.
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: 15f200d48a8f39c488f2c5781e81501c, type: 3}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: Yuna stands beside one of the dumpsters, smoking silently.
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: I clear my throat quietly. She does not look my way.
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 21300000, guid: 7da9ab16c2c193647b838223d9c422c3, type: 3}
     _name: 2
     hideSprite: 0
     fadeIn: 0
     fadeOut: 0
-    _dialogueText: Hey how are you doing?
+    _dialogueText: Hey. Yuna, right?
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: f102f4306f463e4428ce36e2cb9df7b3, type: 3}
+    _sprite: {fileID: 21300000, guid: 7ffdd9d9d17e76b4da07913bdfac2855, type: 3}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: She glances up, lowering the cigarette.
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
     _name: 1
     hideSprite: 0
     fadeIn: 0
     fadeOut: 0
-    _dialogueText: Good.
+    _dialogueText: What do you want?
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: 0b1913bf5ef6ef14283fbb8f5fd59408, type: 3}
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 21300000, guid: a684ae1f80a09264584b9c7d9f7df974, type: 3}
     _name: 2
     hideSprite: 0
     fadeIn: 0
     fadeOut: 0
-    _dialogueText: I noticed the cookies are gone.
-  - hideBox: 0
-    _sprite: {fileID: 21300000, guid: 6b383abe4102ef44b8b2e001030b55fb, type: 3}
-    _name: 1
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: ...
+    _dialogueText: Oh. Hi. I was wondering what you were up to here.
   _playerReplyOptions:
-  - '"Did you eat the cookies?"'
-  - '"The cookies were yummy, right?"'
+  - '"Um... are you doing okay?"'
+  - '"Smoking is bad for you."'
   _nextNode:
   - autoAdvance: 0
     relationshipCheck:
@@ -69,6 +90,7 @@ MonoBehaviour:
       _operation: 0
     extraLines: []
     _nextDialogueNode: {fileID: 11400000, guid: 4a6ed31a1ed1c1b489978ce2bdc698af, type: 2}
+    timeOfDay: 0
   - autoAdvance: 0
     relationshipCheck:
       _relationship: {fileID: 0}
@@ -78,3 +100,4 @@ MonoBehaviour:
       _operation: 0
     extraLines: []
     _nextDialogueNode: {fileID: 11400000, guid: 42954bb921a0abd4a8d9da06009e203a, type: 2}
+    timeOfDay: 0

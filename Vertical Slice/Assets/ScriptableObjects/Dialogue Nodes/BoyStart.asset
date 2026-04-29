@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7bc1845c1ac0141a769c0510a30793, type: 3}
+  m_Name: BoyStart
+  m_EditorClassIdentifier: 
+  _lines:
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: You walk into the living room and glance around, holding an empty
+      cookie jar in your hands.
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: ad042e7ed9e5a4b4da0a18300744a204, type: 3}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 1
+    fadeOut: 0
+    _dialogueText: The boy runs up to you.
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: aeb67816ff368c04d9f8385a46b4a749, type: 3}
+    _portrait: {fileID: 0}
+    _name: 4
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: Hiya.
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: ad042e7ed9e5a4b4da0a18300744a204, type: 3}
+    _portrait: {fileID: 0}
+    _name: 3
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: Hey kid.
+  _playerReplyOptions:
+  - '"Good Morning."'
+  - '"Did you eat the cookies without asking me?"'
+  _nextNode:
+  - autoAdvance: 0
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 11400000, guid: 2bcd387f2cf976e4dbe4958c91c30e18, type: 2}
+      _operation: 1
+    extraLines: []
+    _nextDialogueNode: {fileID: 11400000, guid: 1adb5d4aee589ad4c8da03b8ad8a508b, type: 2}
+    timeOfDay: 0
+  - autoAdvance: 0
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 11400000, guid: 2bcd387f2cf976e4dbe4958c91c30e18, type: 2}
+      _operation: 2
+    extraLines: []
+    _nextDialogueNode: {fileID: 11400000, guid: ce0c5cc8335c10a4ba2249f7bbcc15c6, type: 2}
+    timeOfDay: 0

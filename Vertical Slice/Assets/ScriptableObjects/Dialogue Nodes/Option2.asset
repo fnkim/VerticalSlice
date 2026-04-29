@@ -13,59 +13,21 @@ MonoBehaviour:
   m_Name: Option2
   m_EditorClassIdentifier: 
   _lines:
-  - _sprite: {fileID: 21300000, guid: 4ee8492eefc3bc547bf02067b4effe8d, type: 3}
-    _name: 1
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: Yeah they were super yummy!
-  - _sprite: {fileID: 21300000, guid: 0b1913bf5ef6ef14283fbb8f5fd59408, type: 3}
-    _name: 2
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: I thought you said you didn't eat them?
-  - _sprite: {fileID: 21300000, guid: 6b383abe4102ef44b8b2e001030b55fb, type: 3}
-    _name: 1
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: ...
-  - _sprite: {fileID: 21300000, guid: 6b383abe4102ef44b8b2e001030b55fb, type: 3}
-    _name: 1
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: I ate them.
-  - _sprite: {fileID: 21300000, guid: 6b383abe4102ef44b8b2e001030b55fb, type: 3}
+  - hideBox: 1
+    _sprite: {fileID: 21300000, guid: 0d71953fd64ab214992f45e91b1bc710, type: 3}
+    _portrait: {fileID: 0}
     _name: 0
-    hideSprite: 1
+    hideSprite: 0
     fadeIn: 0
-    fadeOut: 1
-    _dialogueText: He giggles and runs out of the room.
-  _playerReplyOptions:
-  - Chase after him.
-  - Leave him alone.
-  _nextNode:
-  - relationshipCheck:
-      _relationship: {fileID: 0}
-      _relationshipCondition: 0
-    relationshipChange:
-      _relationship: {fileID: 0}
-      _operation: 0
-    extraLines: []
-    _nextDialogueNode: {fileID: 11400000, guid: a91de6c3bb182724f9508cb7783459e9, type: 2}
-  - relationshipCheck:
-      _relationship: {fileID: 0}
-      _relationshipCondition: 0
-    relationshipChange:
-      _relationship: {fileID: 0}
-      _operation: 0
-    extraLines:
-    - _sprite: {fileID: 0}
-      _name: 0
-      hideSprite: 0
-      fadeIn: 0
-      fadeOut: 0
-      _dialogueText: You sigh and decide to just leave him alone.
-    _nextDialogueNode: {fileID: 0}
+    fadeOut: 0
+    _dialogueText: 
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: 4173ebeaa9d40fc4cbeadc3ae8d30c2d, type: 3}
+    _portrait: {fileID: 0}
+    _name: 1
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: That better?
+  _playerReplyOptions: []
+  _nextNode: []

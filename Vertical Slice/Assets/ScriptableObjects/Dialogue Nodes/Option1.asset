@@ -13,38 +13,13 @@ MonoBehaviour:
   m_Name: Option1
   m_EditorClassIdentifier: 
   _lines:
-  - _sprite: {fileID: 21300000, guid: 6b383abe4102ef44b8b2e001030b55fb, type: 3}
+  - hideBox: 0
+    _sprite: {fileID: 21300000, guid: 15f200d48a8f39c488f2c5781e81501c, type: 3}
+    _portrait: {fileID: 0}
     _name: 1
     hideSprite: 0
     fadeIn: 0
     fadeOut: 0
-    _dialogueText: No...
-  - _sprite: {fileID: 0}
-    _name: 2
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: Are you sure?
-  - _sprite: {fileID: 0}
-    _name: 1
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    _dialogueText: ...
-  - _sprite: {fileID: 0}
-    _name: 0
-    hideSprite: 1
-    fadeIn: 0
-    fadeOut: 1
-    _dialogueText: He dashes out of the room.
+    _dialogueText: I'm fine.
   _playerReplyOptions: []
-  _nextNode:
-  - autoAdvance: 1
-    relationshipCheck:
-      _relationship: {fileID: 0}
-      _relationshipCondition: 0
-    relationshipChange:
-      _relationship: {fileID: 0}
-      _operation: 0
-    extraLines: []
-    _nextDialogueNode: {fileID: 11400000, guid: a91de6c3bb182724f9508cb7783459e9, type: 2}
+  _nextNode: []

@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsDialogueActive => _currentNode != null;
        
-    [SerializeField] private Image _spriteUI;
     
 
 
@@ -115,7 +114,6 @@ public class DialogueManager : MonoBehaviour
                         _currentData = null;
                     }
                 }
-
                 Advance(_currentData);
             }
         }
@@ -123,16 +121,12 @@ public class DialogueManager : MonoBehaviour
         else
         {
             //if space or mousebutton click is being held
-            if(!_waitingForPlayerResponse && Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+            if(!_waitingForPlayerResponse && Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Speeding up text");
+                Debug.Log("showing full text");
                 //speeds up typewriter effect
-                _dialogue.speedUpText = true;
-            }
-            else
-            {
-                _dialogue.speedUpText = false;
-            }            
+                _dialogue.fullText = true;
+            }         
         }
     }
 
@@ -154,45 +148,10 @@ public class DialogueManager : MonoBehaviour
         else if(_currentLine < _lengthOfArray)
         {
             
+            
+            DialogueDataManager(_dialogueData);
             _dialogue.ShowDialogue(_dialogueData._dialogueText);
-            
-            if (_dialogueData._sprite != null)
-            {
-                _spriteUI.sprite = _dialogueData._sprite;
-                if(_dialogueData.fadeIn == true)
-                {
-                    StartCoroutine(FadeIn());
-                }
-
-            }
-            if (_dialogueData.hideSprite == true)
-            {
-                if (_dialogueData.fadeOut == true)
-                {
-                    StartCoroutine(FadeOut());
-                }
-                else
-                {
-                    _spriteUI.gameObject.SetActive(false);
-                }
-            }
-
-            if (_dialogueData.hideBox == true)
-            {
-                _dialogue.HideBox();
-            }
-            
-
-            if (_dialogueData._name != Names.Null)
-            {
-                _dialogue.ShowName(_dialogueData._name);
-            }
-            else
-            {
-                _dialogue.HideName();
-            }
-
-
+            _dialogue.fullText = false;
             _currentLine++;
         }
         else
@@ -202,45 +161,56 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-
-    IEnumerator FadeOut()
+    private void DialogueDataManager(DialogueData input)
     {
-        float alphaValue = 1f;
-        Color tmp = _spriteUI.color;
 
-        while (_spriteUI.color.a > 0)
+        if (input._sprite != null)
         {
-            alphaValue -= 0.06f;
-            tmp.a = alphaValue;
-            _spriteUI.color = tmp;
-            yield return new WaitForSeconds(0.001f);
-        }
-        _spriteUI.gameObject.SetActive(false);
-    }
-
-    IEnumerator FadeIn()
-    {
-        _spriteUI.gameObject.SetActive(true);
-        float alphaValue = 0f;
-        Color tmp = _spriteUI.color;
-        _spriteUI.color = tmp;
-
-        while (_spriteUI.color.a < 1)
-        {
-            alphaValue += 0.06f;
-            tmp.a = alphaValue;
-            _spriteUI.color = tmp;
-            yield return new WaitForSeconds(0.001f);
+            _dialogue.ChangeSprite(input._sprite);
+            if (input.fadeIn)
+            {
+                _dialogue.FadingIn(true);
+            }
         }
 
+
+        if (input._portrait == null)
+        {
+            _dialogue.RemovePortrait();
+        }
+        else
+        {
+            _dialogue.AddPortrait(input._portrait);
+        }
+
+
+
+        if (input.hideBox)
+        {
+            _dialogue.HideBox();
+        }
+
+        if (input.hideSprite)
+        {
+            _dialogue.HideSprite();
+        }
+
+        if (input.fadeOut)
+        {
+            _dialogue.FadingIn(false);
+        }
+
+        _dialogue.ShowName(input._name);
+
     }
+
 
 
 
     private void AdvanceAfterLines()
     {
         //basically, if the dialogue node hasn't progressed onto the extra lines yet
-        if(_dialogueOver == false)
+        if(!_dialogueOver)
         {
             //if there are reply options
             if (_currentNode._playerReplyOptions.Length != 0)
@@ -253,36 +223,7 @@ public class DialogueManager : MonoBehaviour
             //if there are next nodes
             else if (_currentNode._nextNode.Length != 0)            
             {
-                //cycle through the list of next nodes
-                bool _friendshipConditionMet = false;
-
-                for (int i = 0; i < _currentNode._nextNode.Length; i++)
-                {
-                    if (_currentNode._nextNode[i].autoAdvance == true)
-                    {
-                        _friendshipConditionMet = true;
-                        SelectedOption(i);
-                        break;
-                    }
-
-                    //if the index's friendship check has something in it
-                    if (_currentNode._nextNode[i].relationshipCheck._relationship != null)
-                    {
-                        // checks for if current friendship level is >= the  required friendship level
-                        if (_currentNode._nextNode[i].relationshipCheck._relationship.RelationshipLevel >= _currentNode._nextNode[i].relationshipCheck._relationshipCondition)
-                        {
-                            _friendshipConditionMet = true;
-                            Debug.Log(_currentNode._nextNode[i].relationshipCheck._relationship.RelationshipLevel);
-                            Debug.Log(_currentNode._nextNode[i].relationshipCheck._relationshipCondition);
-                            SelectedOption(i);
-                            break;
-                        }
-                    }    
-                }
-                if (_friendshipConditionMet == false)
-                {
-                    EndDialogue();
-                }
+                CycleFriendshipCheck(_currentNode._nextNode);
             }
             //if there aren't next nodes
             else
@@ -319,6 +260,57 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+
+    private void CycleFriendshipCheck(NextNode[] nextNodeArray)
+    {
+        //cycle through the list of next nodes
+        bool _friendshipConditionMet = false;
+
+        for (int i = 0; i < nextNodeArray.Length; i++)
+        {
+            if (nextNodeArray[i].autoAdvance == true)
+            {
+                _friendshipConditionMet = true;
+            }
+
+            //if the index's friendship check has something in it
+            if (nextNodeArray[i].relationshipCheck._relationship != null)
+            {
+                _friendshipConditionMet = RelationshipChecker(nextNodeArray[i].relationshipCheck);
+            }   
+
+            if (_friendshipConditionMet)
+            {
+                SelectedOption(i);
+                break;
+            } 
+
+        }
+        
+        if (_friendshipConditionMet == false)
+        {
+            EndDialogue();
+        }
+    }
+
+
+    private bool RelationshipChecker(RelationshipCheck relationshipCheck)
+    {
+        bool _hasConditionBeenMet;
+        // checks for if current friendship level is >= the  required friendship level
+        if (relationshipCheck._relationship.RelationshipLevel >= relationshipCheck._relationshipCondition)
+        {
+            _hasConditionBeenMet = true;
+            Debug.Log(relationshipCheck._relationship.RelationshipLevel);
+            Debug.Log(relationshipCheck._relationshipCondition);
+            return _hasConditionBeenMet;
+        }
+        else
+        {
+            _hasConditionBeenMet = false;
+        }
+        return _hasConditionBeenMet;
+    }
     public void EndDialogue()
     {
         if (_currentNode == null)
@@ -385,6 +377,11 @@ public class DialogueManager : MonoBehaviour
             //set current node to the next dialogue node of _nodeToGoTo
             _currentNode = _nodeToGoTo._nextDialogueNode;
             SetupNode(_currentNode);
+        }
+        
+        if (_nodeToGoTo.timeOfDay != TimeOfDay.Unchanged)
+        {
+            EventBus.Trigger(EventNames.NewTimeEvent, _nodeToGoTo.timeOfDay);
         }
         //advance line with the current data
         Advance(_currentData);
