@@ -53,7 +53,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        StartDialogue(_startingNode);
     }
 
     public void StartDialogue(DialogueNode asset)
@@ -382,6 +381,11 @@ public class DialogueManager : MonoBehaviour
         if (_nodeToGoTo.timeOfDay != TimeOfDay.Unchanged)
         {
             EventBus.Trigger(EventNames.NewTimeEvent, _nodeToGoTo.timeOfDay);
+        }
+
+        if (_nodeToGoTo.setNewStateNode != null)
+        {
+            EventBus.Trigger(EventNames.ChangeCurrentNodeEvent, _nodeToGoTo.setNewStateNode);
         }
         //advance line with the current data
         Advance(_currentData);

@@ -31,4 +31,6 @@ public class NextNode
 
     public TimeOfDay timeOfDay;
 
+    public DialogueNode setNewStateNode;
+
 }
