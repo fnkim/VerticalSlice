@@ -14,45 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - hideBox: 0
-    _sprite: {fileID: 0}
-    _portrait: {fileID: 0}
     _name: 0
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    newFeature: []
+    animChange: 0
+    newFeature: 
     _dialogueText: You walk into the living room and glance around, holding an empty
       cookie jar in your hands.
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: ad042e7ed9e5a4b4da0a18300744a204, type: 3}
-    _portrait: {fileID: 0}
     _name: 0
+    showSprite: 1
     hideSprite: 0
-    fadeIn: 1
-    fadeOut: 0
-    newFeature:
-    - eyes
-    - smile1
-    - eyebrows
+    animChange: 2
+    newFeature: 100000000700000013000000
     _dialogueText: The boy runs up to you.
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: aeb67816ff368c04d9f8385a46b4a749, type: 3}
-    _portrait: {fileID: 0}
     _name: 4
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    newFeature:
-    - mouth1
+    animChange: 0
+    newFeature: 0a000000
     _dialogueText: Hiya.
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: ad042e7ed9e5a4b4da0a18300744a204, type: 3}
-    _portrait: {fileID: 0}
     _name: 3
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
-    newFeature: []
+    animChange: 0
+    newFeature: 07000000
     _dialogueText: Hey kid.
   _playerReplyOptions:
   - '"Good Morning."'

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
+public enum Features {ClosedEyes, Horns, Scales, VMouth3, VMouth2, VMouth1, Frown, Smile, Mouth3, Mouth2, Mouth1, GoldEyes2, GoldEyes1,RedEyes2, RedEyes1, Eyes2, Eyes, Eyebrows3, Eyebrows2, Eyebrows}
 public class DialogueBubble : MonoBehaviour
 {
 
@@ -19,9 +20,9 @@ public class DialogueBubble : MonoBehaviour
     //[SerializeField] private AudioClip _dialogueAudioClip;
     //[SerializeField] private AudioSource _dialogueAudioSource;
 
-    [SerializeField] private Image _spriteUI;
+    [SerializeField] private GameObject _sprite;
 
-    [SerializeField] private Image _portraitUI;
+    //[SerializeField] private Image _portraitUI;
 
 
     [SerializeField] private GameObject[] _features;
@@ -29,6 +30,8 @@ public class DialogueBubble : MonoBehaviour
     private GameObject _currentEyes;
     private GameObject _currentMouth;
     private GameObject _currentEyebrows;
+
+    [SerializeField] private Animator _spriteAnimator;
     
 
 
@@ -50,12 +53,12 @@ public class DialogueBubble : MonoBehaviour
 
     public void ShowDialogue(string dialogue)
     {
-        Debug.Log("showing dialogue");
+        Debug.Log(dialogue);
         gameObject.SetActive(true);
 
-        currentText.text = dialogue;
+        _npcText.text = dialogue;
 
-        currentDialogueObject.SetActive(true);
+        _npcDialogue.SetActive(true);
         
 
         
@@ -68,68 +71,68 @@ public class DialogueBubble : MonoBehaviour
     }
 
 
-    public void ChangeFeature(string feature)
+    public void ChangeFeature(Features feature)
     {
         switch (feature)
         {
-            case "closed_eyes":
+            case Features.ClosedEyes:
                 HideFeatures("eyes", 0);
                 break;
-            case "horns":
+            case Features.Horns:
                 _features[1].SetActive(true);
                 break;
-            case "scales":
+            case Features.Scales:
                 _features[2].SetActive(true);
                 break;
-            case "v_mouth3":
+            case Features.VMouth3:
                 HideFeatures("mouth", 3);
                 break;
-            case "v_mouth2":
+            case Features.VMouth2:
                 HideFeatures("mouth", 4);
                 break;
-            case "v_mouth1":
+            case Features.VMouth1:
                 HideFeatures("mouth", 5);
                 break;
-            case "frown1":
+            case Features.Frown:
                 HideFeatures("mouth", 6);
                 break;
-            case "smile1":
+            case Features.Smile:
                 HideFeatures("mouth", 7);
                 break;
-            case "mouth3":
+            case Features.Mouth3:
                 HideFeatures("mouth", 8);
                 break;
-            case "mouth2":
+            case Features.Mouth2:
                 HideFeatures("mouth", 9);
                 break;
-            case "mouth1":
+            case Features.Mouth1:
                 HideFeatures("mouth", 10);
                 break;
-            case "gold_eyes2":
+            case Features.GoldEyes2:
                 HideFeatures("eyes", 11);
                 break;
-            case "gold_eyes1":
+            case Features.GoldEyes1:
                 HideFeatures("eyes", 12);
                 break;
-            case "red_eyes2":
+            case Features.RedEyes2:
                 HideFeatures("eyes", 13);
                 break;
-            case "red_eyes1":
+            case Features.RedEyes1:
                 HideFeatures("eyes", 14);
                 break;
-            case "eyes2":
+            case Features.Eyes2:
                 HideFeatures("eyes", 15);
                 break;
-            case "eyes":
+            case Features.Eyes:
                 HideFeatures("eyes",16);
                 break;
-            case "eyebrows3":
+            case Features.Eyebrows3:
                 HideFeatures("eyebrows", 17);
                 break;
-            case "eyebrows2":
+            case Features.Eyebrows2:
                 HideFeatures("eyebrows", 18);
                 break;
-            case "eyebrows":
+            case Features.Eyebrows:
                 HideFeatures("eyebrows", 19);
                 break;
         }
@@ -208,52 +211,24 @@ public class DialogueBubble : MonoBehaviour
 
 
 
-    public void ChangeSprite(Sprite newSprite)
-    {
-        _spriteUI.sprite = newSprite;
-    }
-    
-    public void AddPortrait(Sprite newPortrait)
-    {
-        _portraitUI.gameObject.SetActive(true);
-        ChangeDialogueToPortrait(true);
-        _portraitUI.sprite = newPortrait;
-    }
 
-    public void RemovePortrait()
-    {
-        _portraitUI.gameObject.SetActive(false);
-        ChangeDialogueToPortrait(false);
-    }
-
-    public void ChangeDialogueToPortrait(bool input)
-    {
-        if (input)
-        {
-            currentDialogueObject = _portraitDialogue;
-            currentText = _portraitText;
-            _npcDialogue.SetActive(false);
-        }
-        else
-        {
-            currentDialogueObject = _npcDialogue;
-            currentText = _npcText;
-            _portraitDialogue.SetActive(false);
-        }
-
-
-    }
     public void HideSprite()
     {
-        _spriteUI.gameObject.SetActive(false);
+        _sprite.SetActive(false);
     }
+
+        public void ShowSprite()
+    {
+        _sprite.SetActive(true);
+    }
+
 
 
     public void HideName()
     {
         _name.SetActive(false);
     }
-
+/*
     public void FadingIn(bool boolean)
     {
         if (boolean)
@@ -265,7 +240,7 @@ public class DialogueBubble : MonoBehaviour
             StartCoroutine(FadeOut());
         }
     }
-
+*/
 
 
 
@@ -304,6 +279,24 @@ public class DialogueBubble : MonoBehaviour
         gameObject.SetActive(false);
 
     }
+    public void ChangeAnim(AnimChange newAnim)
+    {
+        switch (newAnim)
+        {
+            case AnimChange.Idle:
+                _spriteAnimator.Play("None");
+                break;
+            case AnimChange.Sway:
+                _spriteAnimator.Play("Sway");
+                break;
+            case AnimChange.Tilt:
+                _spriteAnimator.Play("Tilting");
+                break;
+            case AnimChange.Anxious:
+                _spriteAnimator.Play("Anxious");
+                break;
+        }
+    }
 
 
 
@@ -313,23 +306,23 @@ public class DialogueBubble : MonoBehaviour
         fullText = false;
         
 
-        currentText.text = dialogue; //Make the text mesh's content the whole message string right at the beginning. So the characters will stay at the correct positions since the beginning
-        currentText.maxVisibleCharacters = 0;
+        _npcText.text = dialogue; //Make the text mesh's content the whole message string right at the beginning. So the characters will stay at the correct positions since the beginning
+        _npcText.maxVisibleCharacters = 0;
         int messageCharLength = dialogue.Length;
         
 
 
-        while (currentText.maxVisibleCharacters < messageCharLength)
+        while (_npcText.maxVisibleCharacters < messageCharLength)
         {
             if (fullText)
             {
                 Debug.Log("showing full text");
                 //speeds up typewriter effect
-                currentText.maxVisibleCharacters = messageCharLength;
+                _npcText.maxVisibleCharacters = messageCharLength;
                 IsTyping = false;
                 yield break;      
             }
-                currentText.maxVisibleCharacters++;
+                _npcText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(TimeBtwChars);
 
             //_dialogueAudioSource.Play();
@@ -341,11 +334,11 @@ public class DialogueBubble : MonoBehaviour
     }
 
 
-
+/*
     IEnumerator FadeOut()
     {
         float alphaValue = 1f;
-        Color tmp = _spriteUI.color;
+        Color tmp = _sprite.color;
 
         while (_spriteUI.color.a > 0)
         {
@@ -375,5 +368,5 @@ public class DialogueBubble : MonoBehaviour
     }
 
 
-
+*/
 }

@@ -164,28 +164,10 @@ public class DialogueManager : MonoBehaviour
     private void DialogueDataManager(DialogueData input)
     {
 
-        if (input._sprite != null)
-        {
-            _dialogue.ChangeSprite(input._sprite);
-            if (input.fadeIn)
-            {
-                _dialogue.FadingIn(true);
-            }
-        }
-
-
-        if (input._portrait == null)
-        {
-            _dialogue.RemovePortrait();
-        }
-        else
-        {
-            _dialogue.AddPortrait(input._portrait);
-        }
 
         if (input.newFeature.Length != 0)
         {
-            foreach (string i in input.newFeature)
+            foreach (Features i in input.newFeature)
             {
                 _dialogue.ChangeFeature(i);
                 Debug.Log("changinng feature now");
@@ -203,11 +185,22 @@ public class DialogueManager : MonoBehaviour
             _dialogue.HideSprite();
         }
 
+        if (input.showSprite)
+        {
+            _dialogue.ShowSprite();
+        }
+
+        if (input.animChange != AnimChange.Null)
+        {
+            _dialogue.ChangeAnim(input.animChange);
+        }
+
+/*
         if (input.fadeOut)
         {
             _dialogue.FadingIn(false);
         }
-
+*/
         _dialogue.ShowName(input._name);
 
     }

@@ -14,36 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: ec80efb8c8f08f842974462a543ff743, type: 3}
-    _portrait: {fileID: 0}
     _name: 4
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    animChange: 3
+    newFeature: 0f00000012000000
     _dialogueText: Umm...
   - hideBox: 0
-    _sprite: {fileID: 0}
-    _portrait: {fileID: 0}
     _name: 3
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    animChange: 2
+    newFeature: 
     _dialogueText: I know you ate it.
   - hideBox: 0
-    _sprite: {fileID: 21300000, guid: 18393a335b4af96449660e77069fdec5, type: 3}
-    _portrait: {fileID: 0}
     _name: 4
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    animChange: 1
+    newFeature: 090000001000000011000000
     _dialogueText: Sorry.
   - hideBox: 0
-    _sprite: {fileID: 0}
-    _portrait: {fileID: 0}
     _name: 3
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    animChange: 0
+    newFeature: 06000000
     _dialogueText: Just don't do it again...
   _playerReplyOptions:
   - Go to work.
@@ -58,3 +54,4 @@ MonoBehaviour:
     extraLines: []
     _nextDialogueNode: {fileID: 11400000, guid: 5e7576d1079d23141b4352cdfdd05a04, type: 2}
     timeOfDay: 2
+    setNewStateNode: {fileID: 0}
