@@ -23,6 +23,12 @@ public class DialogueBubble : MonoBehaviour
 
     [SerializeField] private Image _portraitUI;
 
+
+    [SerializeField] private GameObject[] _features;
+
+    private GameObject _currentEyes;
+    private GameObject _currentMouth;
+    private GameObject _currentEyebrows;
     
 
 
@@ -39,6 +45,7 @@ public class DialogueBubble : MonoBehaviour
     [SerializeField] private TMP_Text _option1;
     [SerializeField] private TMP_Text _option2;
     [SerializeField] private TMP_Text _option3;
+
 
 
     public void ShowDialogue(string dialogue)
@@ -60,6 +67,109 @@ public class DialogueBubble : MonoBehaviour
 
     }
 
+
+    public void ChangeFeature(string feature)
+    {
+        switch (feature)
+        {
+            case "closed_eyes":
+                HideFeatures("eyes", 0);
+                break;
+            case "horns":
+                _features[1].SetActive(true);
+                break;
+            case "scales":
+                _features[2].SetActive(true);
+                break;
+            case "v_mouth3":
+                HideFeatures("mouth", 3);
+                break;
+            case "v_mouth2":
+                HideFeatures("mouth", 4);
+                break;
+            case "v_mouth1":
+                HideFeatures("mouth", 5);
+                break;
+            case "frown1":
+                HideFeatures("mouth", 6);
+                break;
+            case "smile1":
+                HideFeatures("mouth", 7);
+                break;
+            case "mouth3":
+                HideFeatures("mouth", 8);
+                break;
+            case "mouth2":
+                HideFeatures("mouth", 9);
+                break;
+            case "mouth1":
+                HideFeatures("mouth", 10);
+                break;
+            case "gold_eyes2":
+                HideFeatures("eyes", 11);
+                break;
+            case "gold_eyes1":
+                HideFeatures("eyes", 12);
+                break;
+            case "red_eyes2":
+                HideFeatures("eyes", 13);
+                break;
+            case "red_eyes1":
+                HideFeatures("eyes", 14);
+                break;
+            case "eyes2":
+                HideFeatures("eyes", 15);
+                break;
+            case "eyes":
+                HideFeatures("eyes",16);
+                break;
+            case "eyebrows3":
+                HideFeatures("eyebrows", 17);
+                break;
+            case "eyebrows2":
+                HideFeatures("eyebrows", 18);
+                break;
+            case "eyebrows":
+                HideFeatures("eyebrows", 19);
+                break;
+        }
+
+    }
+
+    private void HideFeatures(string featureType, int featureNumber)
+    {
+        switch (featureType)
+        {
+            case "eyes":
+                if (_currentEyes != null)
+                {
+                    _currentEyes.SetActive(false);
+                }
+                _features[featureNumber].SetActive(true);
+                _currentEyes = _features[featureNumber];
+                Debug.Log("changing eyes");
+                break;
+
+            case "eyebrows":
+                if (_currentEyebrows != null)
+                {
+                    _currentEyebrows.SetActive(false);
+                }
+                _features[featureNumber].SetActive(true);
+                _currentEyebrows = _features[featureNumber];
+                break;
+
+            case "mouth":
+                if (_currentMouth != null)
+                {
+                    _currentMouth.SetActive(false);
+                }
+                _features[featureNumber].SetActive(true);
+                _currentMouth = _features[featureNumber];
+                break;
+
+        }
+    }
 
 
     public void HideBox()

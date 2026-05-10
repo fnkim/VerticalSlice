@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum TimeOfDay {Unchanged, Morning, Day, Night}
+public enum TimeOfDay {Unchanged, Morning, Day, Evening, Night}
 public static class EventNames
 {
     public static string NewTimeEvent = "NewTimeEvent";

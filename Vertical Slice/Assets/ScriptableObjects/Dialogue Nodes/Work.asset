@@ -12,6 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c7bc1845c1ac0141a769c0510a30793, type: 3}
   m_Name: Work
   m_EditorClassIdentifier: 
-  _lines: []
-  _playerReplyOptions: []
-  _nextNode: []
+  _lines:
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: You head into the woods with your axe and begin chopping wood.
+  - hideBox: 0
+    _sprite: {fileID: 0}
+    _portrait: {fileID: 0}
+    _name: 0
+    hideSprite: 0
+    fadeIn: 0
+    fadeOut: 0
+    _dialogueText: When the sun begins to set, you lug your day's work into a wagon.
+  _playerReplyOptions:
+  - Head into town.
+  _nextNode:
+  - autoAdvance: 0
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 0}
+      _operation: 0
+    extraLines: []
+    _nextDialogueNode: {fileID: 0}
+    timeOfDay: 3
+    setNewStateNode: {fileID: 0}

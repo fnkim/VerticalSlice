@@ -15,6 +15,8 @@ public class DialogueData
     public bool hideSprite = false;
     public bool fadeIn = false;
     public bool fadeOut = false;
+
+    public string[] newFeature;
     
     public string _dialogueText;
 }

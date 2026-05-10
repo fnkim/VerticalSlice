@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        StartDialogue(_startingNode);
     }
 
     public void StartDialogue(DialogueNode asset)
@@ -182,6 +183,14 @@ public class DialogueManager : MonoBehaviour
             _dialogue.AddPortrait(input._portrait);
         }
 
+        if (input.newFeature.Length != 0)
+        {
+            foreach (string i in input.newFeature)
+            {
+                _dialogue.ChangeFeature(i);
+                Debug.Log("changinng feature now");
+            }
+        }
 
 
         if (input.hideBox)
