@@ -14,20 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines:
   - hideBox: 0
-    _sprite: {fileID: 0}
-    _portrait: {fileID: 0}
     _name: 0
-    hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    showSprite: 0
+    hideSprite: 1
+    animChange: 0
+    newFeature: 
     _dialogueText: You head into the woods with your axe and begin chopping wood.
   - hideBox: 0
-    _sprite: {fileID: 0}
-    _portrait: {fileID: 0}
     _name: 0
+    showSprite: 0
     hideSprite: 0
-    fadeIn: 0
-    fadeOut: 0
+    animChange: 0
+    newFeature: 
     _dialogueText: When the sun begins to set, you lug your day's work into a wagon.
   _playerReplyOptions:
   - Head into town.
