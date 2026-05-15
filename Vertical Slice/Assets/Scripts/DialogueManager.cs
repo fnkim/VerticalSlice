@@ -195,6 +195,11 @@ public class DialogueManager : MonoBehaviour
             _dialogue.ChangeAnim(input.animChange);
         }
 
+        if (input._background)
+        {
+            _dialogue.ChangeBG(input._background);
+        }
+
 /*
         if (input.fadeOut)
         {
@@ -380,9 +385,10 @@ public class DialogueManager : MonoBehaviour
             SetupNode(_currentNode);
         }
         
-        if (_nodeToGoTo.timeOfDay != TimeOfDay.Unchanged)
+        if (_nodeToGoTo.dayNumber != DayNumber.Unchanged)
         {
-            EventBus.Trigger(EventNames.NewTimeEvent, _nodeToGoTo.timeOfDay);
+            Debug.Log("not unchanged");
+            EventBus.Trigger(EventNames.NewDayEvent, _nodeToGoTo.dayNumber);
         }
 
         if (_nodeToGoTo.setNewStateNode != null)

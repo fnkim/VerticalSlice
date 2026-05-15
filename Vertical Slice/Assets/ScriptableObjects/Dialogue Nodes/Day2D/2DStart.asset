@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7bc1845c1ac0141a769c0510a30793, type: 3}
+  m_Name: 2DStart
+  m_EditorClassIdentifier: 
+  _lines:
+  - hideBox: 0
+    _background: {fileID: 21300000, guid: a2ad29929ae161344ac2559cc7982280, type: 3}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: After an unrestful night of sleep, you step out into the living
+      room and call out for the boy.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: sdf
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: Something taps you on the back. You whirl around, startled.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 3
+    showSprite: 1
+    hideSprite: 0
+    animChange: 2
+    newFeature: 0b000000110000000600000001000000
+    _dialogueText: What the...!
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 090000000c000000
+    _dialogueText: Um... Good morning...
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 3
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 06000000
+    _dialogueText: What is- what happened to you?
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 09000000
+    _dialogueText: I'm changing. I'm sorry. I should have told you.
+  _playerReplyOptions: []
+  _nextNode: []

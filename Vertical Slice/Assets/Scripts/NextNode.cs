@@ -29,7 +29,7 @@ public class NextNode
     
     public DialogueNode _nextDialogueNode;
 
-    public TimeOfDay timeOfDay;
+    public DayNumber dayNumber;
 
     public DialogueNode setNewStateNode;
 

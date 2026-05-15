@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7bc1845c1ac0141a769c0510a30793, type: 3}
+  m_Name: 1Shopping
+  m_EditorClassIdentifier: 
+  _lines:
+  - hideBox: 0
+    _background: {fileID: 21300000, guid: caac7859e5111b044a3fc39ae4c345da, type: 3}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: You deliver the lumber to the warehouse and receive your payment
+      for the day.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: Time to buy some groceries for dinner.
+  _playerReplyOptions:
+  - Go to the butcher's
+  - Go to the general store
+  _nextNode:
+  - autoAdvance: 0
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 11400000, guid: 2bcd387f2cf976e4dbe4958c91c30e18, type: 2}
+      _operation: 1
+    extraLines:
+    - hideBox: 0
+      _background: {fileID: 0}
+      _name: 0
+      showSprite: 0
+      hideSprite: 0
+      animChange: 0
+      newFeature: 
+      _dialogueText: You purchase some beef and head home.
+    _nextDialogueNode: {fileID: 11400000, guid: 610f04e3ab689574dacba7ab4f8e9e84, type: 2}
+    dayNumber: 0
+    setNewStateNode: {fileID: 0}
+  - autoAdvance: 0
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 11400000, guid: ea94563203f239340ba4ab8248028c7a, type: 2}
+      _operation: 1
+    extraLines:
+    - hideBox: 0
+      _background: {fileID: 0}
+      _name: 0
+      showSprite: 0
+      hideSprite: 0
+      animChange: 0
+      newFeature: 
+      _dialogueText: You buy some vegetables at the store.
+    _nextDialogueNode: {fileID: 11400000, guid: e7366acd9f802c44c9e3a4121b1ee087, type: 2}
+    dayNumber: 0
+    setNewStateNode: {fileID: 0}

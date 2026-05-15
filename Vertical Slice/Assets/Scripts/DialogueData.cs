@@ -15,6 +15,7 @@ public class DialogueData
 
     //public Sprite _sprite;
     //public Sprite _portrait;
+    public Sprite _background;
     public Names _name;
     public bool showSprite = false;
     public bool hideSprite = false;

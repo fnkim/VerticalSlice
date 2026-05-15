@@ -23,6 +23,7 @@ public class DialogueBubble : MonoBehaviour
     [SerializeField] private GameObject _sprite;
 
     //[SerializeField] private Image _portraitUI;
+    [SerializeField] private Image _background;
 
 
     [SerializeField] private GameObject[] _features;
@@ -53,7 +54,6 @@ public class DialogueBubble : MonoBehaviour
 
     public void ShowDialogue(string dialogue)
     {
-        Debug.Log(dialogue);
         gameObject.SetActive(true);
 
         _npcText.text = dialogue;
@@ -179,6 +179,10 @@ public class DialogueBubble : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void ChangeBG(Sprite input)
+    {
+        _background.sprite = input;
+    }
 
     public void ShowName(Names _speakerName)
     {
@@ -217,7 +221,7 @@ public class DialogueBubble : MonoBehaviour
         _sprite.SetActive(false);
     }
 
-        public void ShowSprite()
+    public void ShowSprite()
     {
         _sprite.SetActive(true);
     }

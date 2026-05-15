@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7bc1845c1ac0141a769c0510a30793, type: 3}
+  m_Name: 1School
+  m_EditorClassIdentifier: 
+  _lines:
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 06000000
+    _dialogueText: Your heart sinks.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 3
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 
+    _dialogueText: Oh... I'm sorry kiddo. I promise I'll try to enroll you in school
+      as soon as possible.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 3
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 10000000
+    _dialogueText: Then you can be with other kids! Doesn't that sound fun?
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 0
+    animChange: 2
+    newFeature: 0f000000
+    _dialogueText: ...
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 1000000009000000
+    _dialogueText: I'm not a kid.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 3
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 06000000
+    _dialogueText: Huh? Yes you are. Do you think you're a grown up?
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 0f00000011000000
+    _dialogueText: You grin and try to make the boy laugh, but he looks like he's
+      about to cry.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 08000000
+    _dialogueText: That's not what I mean. You'll see...
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 4
+    showSprite: 0
+    hideSprite: 1
+    animChange: 0
+    newFeature: 08000000
+    _dialogueText: The boy flees to his bedroom.
+  - hideBox: 0
+    _background: {fileID: 0}
+    _name: 0
+    showSprite: 0
+    hideSprite: 0
+    animChange: 0
+    newFeature: 08000000
+    _dialogueText: You consider going after him but decide to give him some space.
+  _playerReplyOptions: []
+  _nextNode:
+  - autoAdvance: 1
+    relationshipCheck:
+      _relationship: {fileID: 0}
+      _relationshipCondition: 0
+    relationshipChange:
+      _relationship: {fileID: 0}
+      _operation: 0
+    extraLines:
+    - hideBox: 0
+      _background: {fileID: 0}
+      _name: 0
+      showSprite: 0
+      hideSprite: 0
+      animChange: 0
+      newFeature: 
+      _dialogueText: 
+    _nextDialogueNode: {fileID: 0}
+    dayNumber: 2
+    setNewStateNode: {fileID: 0}
