@@ -11,7 +11,28 @@ This works with the other systems in my game because the day and night states us
 
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+
+My complicating gameplay feature is that after the end of the day, the child character begins to change into a different creature depending on the relationship level changes that have resulted from your decisions. This is my task breakdown:
+1. Create a state machine for the different days
+- Make the transition event in code and trigger it in the state graph through dialogue nodes
+- In the on enter event of the next day state, check friendship levels and trigger a different route based on comparing the different friendship level values
+2. Change the character’s appearance and dialogue routes based on the new development in relationship
+- Add the character as a model with different meshes for the different facial features
+- Program the feature swapping mechanic and implement it in the dialogue node options
+- Create dialogue nodes that have different story outcomes for the changing effects of the next day
+- Implement new physical features that are different based on the relationship branches
+
+
+The task steps break-down activity did help me build the feature for this Milestone. The quiz question did not really help me because I ended up changing the feature from what I wrote about in the quiz to something else. If I were to improve my break-downs to be more helpful, I would probably re-order them to do more specific things step-by-step rather than broad tasks narrowing down, since that’s the way I have been finding that my thinking functions better.
+
+
+I bridged visual scripting and code in my game by calling a custom event from a Graph from a C# method. The event I am calling triggers a transition to the next day state, meaning it switches from Day 1 to Day 2. This is triggered in a method within my dialogue manager script, when an enum variable is set to a day value. Once the visual scripting state machine transitions to the day 2 state, it immediately compares relationship level values in order to determine which dialogue node to trigger. This allows me to handle the logic and execution of the complicating factor and the system of multiple days separately from the main dialogue manager, which will only handle moving through and between dialogue nodes.
+
+<img width="800" height="280" alt="Screenshot 2026-05-14 215126" src="https://github.com/user-attachments/assets/0af0d222-6ee6-4a8c-8ad3-7cb928fbbea0" />
+
+
+I would like my project to be graded on ScriptableObjects. This can be found in the dialogue system, as it transitions between dialogue nodes, as well as in the relationship system, which uses ScriptableObjects to create relationship variables that are altered in the dialogue nodes. The values of these relationship variables at the end of the day determine new changes that appear in the next day.
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
