@@ -31,7 +31,7 @@ MonoBehaviour:
     _dialogueText: The boy leaps out at you as you are plating the meal.
   - hideBox: 0
     _background: {fileID: 0}
-    _name: 0
+    _name: 4
     showSprite: 1
     hideSprite: 0
     animChange: 0

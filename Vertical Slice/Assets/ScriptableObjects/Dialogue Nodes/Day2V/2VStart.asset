@@ -60,7 +60,7 @@ MonoBehaviour:
     showSprite: 0
     hideSprite: 0
     animChange: 0
-    newFeature: 0d000000
+    newFeature: 0d00000006000000
     _dialogueText: You're- what are you...?
   - hideBox: 0
     _background: {fileID: 0}
